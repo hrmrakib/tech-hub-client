@@ -17,7 +17,7 @@ const SignUp = () => {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
+    // reset,
   } = useForm();
 
   const onSubmit = async (data: any) => {};
