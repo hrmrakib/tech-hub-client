@@ -1,11 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-// Define a type for the BlogCard props
 interface BlogCardProps {
   title: string;
   description: string;
   imageUrl: string;
   link: string;
+  authorName: string;
+  date: string;
+  authorAvatarUrl: string;
+  category: string;
+  readingTime: string;
 }
 
 const BlogCard: React.FC<BlogCardProps> = ({
@@ -13,25 +18,47 @@ const BlogCard: React.FC<BlogCardProps> = ({
   description,
   imageUrl,
   link,
+  authorName,
+  date,
+  authorAvatarUrl,
+  category,
+  readingTime,
 }) => {
   return (
-    <div className="max-w-md mx-auto border rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105">
-      <a href={link} target="_blank" rel="noopener noreferrer">
-        <img src={imageUrl} alt={title} className="w-full h-48 object-cover" />
-      </a>
-      <div className="p-6">
-        <h3 className="text-lg font-semibold text-gray-800 hover:text-blue-600 transition-colors">
-          {title}
-        </h3>
+    <div className="w-full border rounded-2xl p-3">
+      <Link to={link}>
+        <img
+          src={imageUrl}
+          alt={title}
+          className="w-full h-[250px] object-cover rounded-lg"
+        />
+      </Link>
+      <p className="bg-blue-200 py-1 text-blue-600 text-xs my-5 flex justify-center items-center rounded-md max-w-12">
+        {category}
+      </p>
+      <div className="">
+        <Link to={link}>
+          <h3 className="text-xl font-bold text-gray-800 hover:text-blue-600 transition-colors leading-[26px]">
+            {title}
+          </h3>
+        </Link>
         <p className="text-gray-600 mt-2 line-clamp-3">{description}</p>
-        <a
-          href={link}
-          className="inline-block mt-4 text-blue-500 hover:underline"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Read More
-        </a>
+      </div>
+      <div className="flex justify-between items-center mt-6">
+        <div className="flex items-center gap-4">
+          <img
+            src={authorAvatarUrl}
+            alt=""
+            className="size-10 rounded-full bg-gray-300 object-cover"
+          />
+          <div className="space-y-1">
+            <h3 className="text-sm font-bold text-gray-500">{authorName}</h3>
+            <p className="text-xs text-gray-500">{date}</p>
+          </div>
+        </div>
+        <p className="text-xs text-gray-500 font-medium">
+          {readingTime} to read
+        </p>
       </div>
     </div>
   );
