@@ -1,8 +1,12 @@
 import React from "react";
 import Container from "../../components/Container";
-import BlogCard from "../../components/BlogCard";
+import BlogCard from "../../components/blog/BlogCard";
+import SearchBar from "../../components/blog/SearchBar";
 
 const Blogs: React.FC = () => {
+  const onSearch = (query: string): void => {
+    console.log(query);
+  };
   return (
     <Container>
       <div className="">
@@ -15,7 +19,7 @@ const Blogs: React.FC = () => {
         <div className="flex-grow grid grid-cols-1 lg:grid-cols-2 gap-5">
           <BlogCard
             title="21 Job Interview Tips: How To Make a Great Impression"
-            link=""
+            link="/blogs/123"
             description="Our mission is to create the world&rsquo;s most sustainable healthcare company by creating high-quality healthcare products in iconic, sustainable packaging."
             imageUrl="https://jobbox-nextjs-v3.vercel.app/assets/imgs/page/blog/img1.png"
             authorAvatarUrl="https://jobbox-nextjs-v3.vercel.app/assets/imgs/page/blog/img1.png"
@@ -26,7 +30,7 @@ const Blogs: React.FC = () => {
           />
           <BlogCard
             title="21 Job Interview Tips: How To Make a Great Impression"
-            link=""
+            link="/blogs/123"
             description="Our mission is to create the world&rsquo;s most sustainable healthcare company by creating high-quality healthcare products in iconic, sustainable packaging."
             imageUrl="https://jobbox-nextjs-v3.vercel.app/assets/imgs/page/blog/img1.png"
             authorAvatarUrl="https://jobbox-nextjs-v3.vercel.app/assets/imgs/page/blog/img1.png"
@@ -37,7 +41,7 @@ const Blogs: React.FC = () => {
           />
           <BlogCard
             title="21 Job Interview Tips: How To Make a Great Impression"
-            link=""
+            link="/blogs/123"
             description="Our mission is to create the world&rsquo;s most sustainable healthcare company by creating high-quality healthcare products in iconic, sustainable packaging."
             imageUrl="https://jobbox-nextjs-v3.vercel.app/assets/imgs/page/blog/img1.png"
             authorAvatarUrl="https://jobbox-nextjs-v3.vercel.app/assets/imgs/page/blog/img1.png"
@@ -48,7 +52,7 @@ const Blogs: React.FC = () => {
           />
           <BlogCard
             title="21 Job Interview Tips: How To Make a Great Impression"
-            link=""
+            link="/blogs/123"
             description="Our mission is to create the world&rsquo;s most sustainable healthcare company by creating high-quality healthcare products in iconic, sustainable packaging."
             imageUrl="https://jobbox-nextjs-v3.vercel.app/assets/imgs/page/blog/img1.png"
             authorAvatarUrl="https://jobbox-nextjs-v3.vercel.app/assets/imgs/page/blog/img1.png"
@@ -58,7 +62,9 @@ const Blogs: React.FC = () => {
             readingTime="8 mins"
           />
         </div>
-        <div className="min-w-[400px] min-h-[200px] border p-6 rounded-lg"></div>
+        <div className="min-w-[400px] min-h-[200px]">
+          <SearchBar placeholder="Search" onSearch={onSearch} />
+        </div>
       </div>
     </Container>
   );

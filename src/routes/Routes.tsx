@@ -4,6 +4,7 @@ import ErrorPage from "../pages/error/ErrorPage";
 import Blogs from "../pages/blogs/Blogs";
 import App from "../App";
 import Home from "../pages/home/Home";
+import Blog from "../pages/blog/Blog";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "/blogs",
         element: <Blogs />,
+      },
+      {
+        path: "/blogs/:id",
+        element: <Blog />,
       },
     ],
   },

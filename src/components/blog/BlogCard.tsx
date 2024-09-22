@@ -25,7 +25,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
   readingTime,
 }) => {
   return (
-    <div className="w-full border rounded-2xl p-3">
+    <div className="w-full border rounded-2xl p-3 hover:-translate-y-2 hover:shadow-md hover:border-gray-300 my-auto duration-500">
       <Link to={link}>
         <img
           src={imageUrl}
@@ -52,8 +52,10 @@ const BlogCard: React.FC<BlogCardProps> = ({
             className="size-10 rounded-full bg-gray-300 object-cover"
           />
           <div className="space-y-1">
-            <h3 className="text-sm font-bold text-gray-500">{authorName}</h3>
-            <p className="text-xs text-gray-500">{date}</p>
+            <h3 className="text-sm font-bold text-gray-500">
+              {authorName || "Anonymous"}
+            </h3>
+            <p className="text-xs text-gray-500">{date || "Unknown date"}</p>
           </div>
         </div>
         <p className="text-xs text-gray-500 font-medium">
