@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Container from "../../components/Container";
-import BlogCard from "../../components/blog/BlogCard";
-import SearchBar from "../../components/blog/SearchBar";
-import TrendingNow from "../../components/blog/TrendingNow";
-import Gallery from "../../components/blog/Gallery";
-import Pagination from "../../components/blog/Pagination";
+import BlogCard from "../../components/blogs/BlogCard";
+import SearchBar from "../../components/blogs/SearchBar";
+import TrendingNow from "../../components/blogs/TrendingNow";
+import Gallery from "../../components/blogs/Gallery";
+import Pagination from "../../components/blogs/Pagination";
 
 const Blogs: React.FC = () => {
   const onSearch = (query: string): void => {

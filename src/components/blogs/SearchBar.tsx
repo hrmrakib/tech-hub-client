@@ -19,7 +19,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   };
 
   return (
-    <div className="flex items-center w-full h-14 bg-white rounded-md border px-2 focus-within:outline focus-within:outline-1 focus-within:outline-blue-500">
+    <div className="flex items-center w-full h-14 bg-white rounded-md border px-2 focus-within:outline focus-within:outline-1 focus-within:outline-gray-300">
       <input
         type="text"
         placeholder={placeholder}
@@ -29,7 +29,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
       />
       <button
         type="button"
-        className="p-3 text-gray-500 hover:text-blue-600 focus:outline-none"
+        className="p-3 text-gray-400 hover:text-gray-500 focus:outline-none"
         onClick={handleSearch}
       >
         <FiSearch size={24} />
